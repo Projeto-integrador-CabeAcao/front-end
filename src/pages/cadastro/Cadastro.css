@@ -1,0 +1,7 @@
+.fundoCadastro {
+    background-image: url(../../assets/alunos.svg);
+      background-repeat: no-repeat;
+      width: 100%;
+      min-height: 100vh;
+      background-position: center;
+  }
