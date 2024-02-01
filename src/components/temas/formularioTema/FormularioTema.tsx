@@ -16,7 +16,7 @@ function FormularioTema() {
   const token = usuario.token;
 
   async function buscarPorId(id: string) {
-    await buscar(`/temas/${id}`, setTema, {
+    await buscar(`/tema/${id}`, setTema, {
       headers: {
         Authorization: token,
       },
@@ -43,7 +43,7 @@ function FormularioTema() {
 
     if (id !== undefined) {
       try {
-        await atualizar(`/temas`, tema, setTema, {
+        await atualizar(`/tema`, tema, setTema, {
           headers: {
             'Authorization': token
           }
@@ -64,7 +64,7 @@ function FormularioTema() {
 
     } else {
       try {
-        await cadastrar(`/temas`, tema, setTema, {
+        await cadastrar(`/tema`, tema, setTema, {
           headers: {
             'Authorization': token
           }
@@ -122,7 +122,7 @@ function FormularioTema() {
             placeholder="Descrição"
             name='descricao'
             className="border-2 border-slate-700 rounded p-2"
-            value={tema.descricao}
+            value={tema.descricao}            
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
@@ -153,12 +153,6 @@ function FormularioTema() {
             </div>
           </div>
         </div>
-
-
-
-
-
-
         <button
           className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
           type="submit"
