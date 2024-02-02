@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthContext';
-
+import icone from '../../../assets/img/png/globe.png'
 import Tema from '../../../models/Tema';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
+
 
 function FormularioTema() {
   const [tema, setTema] = useState<Tema>({} as Tema);
@@ -35,8 +36,10 @@ function FormularioTema() {
       [e.target.name]: e.target.value
     })
 
-    console.log(JSON.stringify(tema))
   }
+
+  
+
 
   async function gerarNovoTema(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -104,55 +107,42 @@ function FormularioTema() {
 
       <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Nome</label>
+          <label htmlFor="disciplina">Disciplina *</label>
           <input
             type="text"
-            placeholder="Nome"
-            name='nome'
+            placeholder="Ex.:Português"
+            name='disciplina'
             className="border-2 border-slate-700 rounded p-2"
-            value={tema.nome}
+            value={tema.disciplina}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição do tema</label>
+          <label htmlFor="descricao">Descrição *</label>
           <input
             type="text"
             placeholder="Descrição"
             name='descricao'
             className="border-2 border-slate-700 rounded p-2"
-            value={tema.descricao}            
+            value={tema.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
 
-        <div className='flex justify-around'>
-          <div className="flex gap-2">
-            <div>
-              <label htmlFor="disponivel">Disponivel</label>
-              <input
-                type="radio"
-                name='status'
-                value='disponivel'
-
-                className="border-2 border-slate-700 rounded p-2"
-                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-              />
-            </div>
-            <div>
-              <label htmlFor="indisponivel">Indisponivel</label>
-              <input
-                type="radio"
-                name='status'
-                value='indisponivel'
-
-                className="border-2 border-slate-700 rounded p-2"
-                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-              />
-            </div>
-          </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="link">Icone/imagem</label>
+          <input
+            type="text"
+            placeholder="www.LinkdaSuaImagemAqui.com.br"
+            name='link'
+            className="border-2 border-slate-700 rounded p-2"
+            value={tema.link}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+          />
         </div>
+
+        
         <button
           className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
           type="submit"
