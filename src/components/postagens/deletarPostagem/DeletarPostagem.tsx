@@ -43,7 +43,7 @@ function DeletarPostagem() {
   }, [id])
 
   function retornar() {
-    navigate("/postagem")
+    navigate("/postagens")
   }
 
   async function deletarPostagem() {
@@ -73,6 +73,7 @@ function DeletarPostagem() {
         <div className="p-4">
           <p className='text-xl h-full'>{postagem.titulo}</p>
           <p>{postagem.texto}</p>
+          <p>{postagem.materia}</p>
         </div>
         <div className="flex">
           <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>

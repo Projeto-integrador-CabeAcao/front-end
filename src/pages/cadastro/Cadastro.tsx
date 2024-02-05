@@ -113,6 +113,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
+          
           <div className="flex flex-col w-full">
             <label htmlFor="foto">Foto</label>
             <input
@@ -125,6 +126,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
+
           <div className="flex flex-col w-full">
             <label htmlFor="senha">Senha</label>
             <input

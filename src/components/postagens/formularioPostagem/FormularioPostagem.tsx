@@ -19,17 +19,17 @@ function FormularioPostagem() {
   const [tema, setTema] = useState<Tema>({
     id: 0,
     descricao: '',
-    disciplina:'',
-    link:''
+    disciplina: '',
+    link: ''
   });
 
   const [postagem, setPostagem] = useState<Postagem>({
     id: 0,
-    materia:'',
+    materia: '',
     titulo: '',
     texto: '',
-    midia:'',
-    disponivel:false,
+    midia: '',
+    disponivel: false,
     data: '',
     tema: null,
     usuario: null,
@@ -96,11 +96,11 @@ function FormularioPostagem() {
       ...postagem,
       [e.target.name]: e.target.value === "Disponível"
     })
-}
+  }
 
 
   function retornar() {
-    navigate('/postagem');
+    navigate('/postagens');
   }
 
   async function gerarNovaPostagem(e: ChangeEvent<HTMLFormElement>) {
@@ -190,35 +190,37 @@ function FormularioPostagem() {
             className="border-2 border-slate-700 rounded p-2"
           />
         </div>
+        
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col w-full">
           <label htmlFor="midia">Midia</label>
           <input
+            type="text"
+            id="midia"
+            name="midia"
+            placeholder="Midia"
+            className="border-2 border-slate-700 rounded p-2"
             value={postagem.midia}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="midia"
-            name="midia"
-            required
-            className="border-2 border-slate-700 rounded p-2"
           />
         </div>
 
-        <div className="flex flex-col gap-2">
-    <label htmlFor="disponivel">Disponibilidade</label>
-    
-    <select
-    value={postagem.disponivel ? "Disponível" : "Não disponível"}
-    onChange={(e: ChangeEvent<HTMLSelectElement>) => atualizarEstadoSelect(e)}
-    name="disponivel"
-    required
-    className="border-2 border-slate-700 rounded p-2"
->
-    <option value="Disponível">Disponível</option>
-    <option value="Não disponível">Não disponível</option>
-</select>
 
-</div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="disponivel">Disponibilidade</label>
+
+          <select
+            value={postagem.disponivel ? "Disponível" : "Não disponível"}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => atualizarEstadoSelect(e)}
+            name="disponivel"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          >
+            <option value="Disponível">Disponível</option>
+            <option value="Não disponível">Não disponível</option>
+          </select>
+
+        </div>
 
 
         <div className="flex flex-col gap-2">

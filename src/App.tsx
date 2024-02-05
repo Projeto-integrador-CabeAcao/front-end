@@ -14,6 +14,8 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaPostagens from './components/postagens/listaPostagem/ListaPostagem';
 import FormularioPostagem from './components/postagens/formularioPostagem/FormularioPostagem';
 import Perfil from './pages/perfil/Perfil';
+import Sobre from './pages/sobre/Sobre';
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
     <AuthProvider>
         <BrowserRouter>
           <Navbar />
-          <div className='min-h-[80vh] bg-[#0488AB]'>
+          <div className='min-h-[80vh] bg-[#F0F1F2]'>
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
@@ -35,8 +37,9 @@ function App() {
               <Route path="/postagens" element={<ListaPostagens />} />
               <Route path="/cadastroPostagem" element={<FormularioPostagem />} />
               <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
-              <Route path="/deletarPostagem/:id" element={<DeletarTema />} />
+              <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
               <Route path="/perfil" element={<Perfil />} />
+              <Route path='/sobre' element={<Sobre/>}/>
             </Routes>
           </div>
           <Footer />
