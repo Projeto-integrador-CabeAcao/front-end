@@ -56,7 +56,7 @@ function ListaPostagens() {
           <CardPostagem key={postagem.id} post={postagem} />
         ))}
       </div>
-    </>
+      </>
   );
 }
 

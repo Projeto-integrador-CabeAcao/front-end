@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem'
 import checkedIcon from '../../../assets/img/png/check.png'
@@ -34,17 +33,17 @@ function CardPostagem({ post }: CardPostagemProps) {
         <p className='text-sm text-gray-500'>Tema: {post.tema?.descricao}</p>
         <p className='text-sm text-gray-500'>Materia: {post.materia}</p>
         {/* <p className='text-sm text-gray-500'>Midia: {post.midia}</p> */}
-        <img src={post.midia} alt="" />
+        <img src={post.midia} alt="" className=''/>
         <p className='text-sm text-gray-500'>Data: {new Intl.DateTimeFormat(undefined, {
           dateStyle: 'full',
           timeStyle: 'medium',
         }).format(new Date(post.data))}</p>
       </div>
-      <div className="flex border-t border-gray-200 rounded-bl-lg rounded-br-lg">
-        <Link to={`/editarPostagem/${post.id}`} className='w-full text-white bg-blue-500 hover:bg-blue-600 flex items-center justify-center py-2 rounded'>
+      <div className="mt-auto flex justify-between border-t border-gray-200 rounded-bl-lg rounded-br-lg ">
+        <Link to={`/editarPostagem/${post.id}`} className='w-full text-white bg-[#3ab7ff] hover:bg-[#1e88e5] flex items-center justify-center py-2 rounded'>
           <button>Editar</button>
         </Link>
-        <Link to={`/deletarPostagem/${post.id}`} className='text-white bg-red-500 hover:bg-red-600 w-full flex items-center justify-center py-2 rounded'>
+        <Link to={`/deletarPostagem/${post.id}`} className='text-white bg-[#e55835] hover:bg-[#e54435] w-full flex items-center justify-center py-2 rounded'>
           <button>Deletar</button>
         </Link>
       </div>
