@@ -196,11 +196,11 @@ function FormularioPostagem() {
 
   const carregandoTema = tema.descricao === '';
 
-  return (
+  return (    
     <div className="container flex flex-col mx-auto items-center">
       <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Postagem' : 'Cadastrar Postagem'}</h1>
 
-      <form onSubmit={gerarNovaPostagem} className="flex flex-col w-1/2 gap-4">
+      <form onSubmit={gerarNovaPostagem} className="flex flex-col w-1/2 gap-4" style={{overflow: 'auto', maxHeight: '70vh'}}>
         <div className="flex flex-col gap-2">
           <label htmlFor="titulo">Titulo da postagem</label>
           <input
@@ -277,7 +277,7 @@ function FormularioPostagem() {
             <option value="" selected disabled>Selecione um tema</option>
             {temas.map((tema) => (
               <>
-                <option value={tema.id} >{tema.descricao}</option>
+                <option value={tema.id} >{tema.disciplina}</option>
               </>
             ))}
           </select>
@@ -287,7 +287,7 @@ function FormularioPostagem() {
         </button>
       </form>
     </div>
-  );
+);  
 }
 
 export default FormularioPostagem;
