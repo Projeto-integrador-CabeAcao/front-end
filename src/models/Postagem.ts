@@ -7,6 +7,7 @@ export default interface Postagem {
   titulo: string;
   texto: string;
   midia: string;
+  disponivel:boolean;
   data: string;
   tema: Tema | null;
   usuario: Usuario | null;
