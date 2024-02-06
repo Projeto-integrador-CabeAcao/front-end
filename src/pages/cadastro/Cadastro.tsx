@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
@@ -8,7 +8,7 @@ import './Cadastro.css'
 function Cadastro() {
   let navigate = useNavigate()
   const [confirmaSenha, setConfirmaSenha] = useState<string>("")
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading] = useState<boolean>(false)
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: '',
