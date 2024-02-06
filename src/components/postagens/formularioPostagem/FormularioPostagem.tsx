@@ -3,7 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthContext';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
-import { buscar, atualizar, cadastrar } from '../../../services/Service';
+import { buscar, atualizar, cadastrar, deletar } from '../../../services/Service';
+import { toastAlerta } from '../../../utils/toastAlerta';
 
 
 function FormularioPostagem() {
@@ -61,7 +62,54 @@ function FormularioPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      async function buscarPorId(id: string) {
+        try {
+          await buscar(`/postagens/${id}`, setPostagem, {
+            headers: {
+              'Authorization': token
+            }
+          })
+        } catch (error: any) {
+          if (error.toString().includes('403')) {
+            toastAlerta('O token expirou, favor logar novamente', 'info')
+            handleLogout()
+          }
+        }
+      }
+    
+      useEffect(() => {
+        if (token === '') {
+          toastAlerta('Você precisa estar logado', 'info')
+          navigate('/login')
+        }
+      }, [token])
+    
+      useEffect(() => {
+        if (id !== undefined) {
+          buscarPorId(id)
+        }
+      }, [id])
+    
+      function retornar() {
+        navigate("/postagens")
+      }
+    
+      async function deletarPostagem() {
+        try {
+          await deletar(`/postagens/${id}`, {
+            headers: {
+              'Authorization': token
+            }
+          })
+    
+          toastAlerta('Postagem apagada com sucesso', 'sucesso')
+    
+        } catch (error) {
+          toastAlerta('Erro ao apagar a Postagem', 'erro')
+        }
+    
+        retornar()
+      }alert('Você precisa estar logado');
       navigate('/');
     }
   }, [token]);

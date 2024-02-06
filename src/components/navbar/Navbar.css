@@ -1,0 +1,11 @@
+.navbar-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.5s ease;
+  }
+  
+  .navbar-link:hover {
+    color: #4F46E5;
+  }
+  

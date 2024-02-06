@@ -68,16 +68,17 @@ function DeletarPostagem() {
 
       <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar a postagem a seguir?</p>
 
-      <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-        <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Postagem</header>
+      <div className='bg-white border flex flex-col rounded-2xl overflow-hidden justify-between'>
+        <header className='py-2 px-6 bg-white text-black font-bold border-b-2 text-2xl'>Postagem</header>
         <div className="p-4">
           <p className='text-xl h-full'>{postagem.titulo}</p>
           <p>{postagem.texto}</p>
           <p>{postagem.materia}</p>
+          <img src={postagem.midia} alt="" className=''/>
         </div>
         <div className="flex">
-          <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
-          <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={deletarPostagem}>
+          <button className='w-full text-white bg-[#3ab7ff] hover:bg-[#1e88e5] flex items-center justify-center py-2 rounded' onClick={retornar}>Não</button>
+          <button className='text-white bg-[#e55835] hover:bg-[#e54435] w-full flex items-center justify-center py-2 rounded' onClick={deletarPostagem}>
             Sim
           </button>
         </div>
