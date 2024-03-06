@@ -64,12 +64,12 @@ function Cadastro() {
   }
 
   return (
-    <div className="flex items-center justify-center h-screen" style={{backgroundImage: "url('caminho/para/sua/imagem.jpg')", backgroundSize: 'cover'}}>
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-5">
-        <h2 className="text-2xl font-semibold text-center text-gray-700">Cadastrar</h2>
+    <div className="fundoLogin flex items-center justify-center" style={{ height: '100vh' }}>
+      <div className="w-full max-w-md rounded-lg shadow-md p-5" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+        <h2 className="text-2xl font-bold text-center text-white">Faça seu cadastro</h2>
         <form onSubmit={cadastrarNovoUsuario} className="mt-4">
           <div className="flex flex-col mb-2">
-            <label htmlFor="nome" className="mb-1 text-sm font-medium text-gray-600">Nome</label>
+            <label htmlFor="nome" className="mb-1 text-sm font-medium text-white">Nome</label>
             <input
               type="text"
               id="nome"
@@ -81,7 +81,7 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col mb-2">
-            <label htmlFor="usuario" className="mb-1 text-sm font-medium text-gray-600">Usuario</label>
+            <label htmlFor="usuario" className="mb-1 text-sm font-medium text-white">Usuario</label>
             <input
               type="text"
               id="usuario"
@@ -93,18 +93,18 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col mb-2">
-            <label htmlFor="dataNascimento" className="mb-1 text-sm font-medium text-gray-600">Data de Nascimento</label>
+            <label htmlFor="dataNascimento" className="mb-1 text-sm font-medium text-white">Data de Nascimento</label>
             <input
               type="date"
               id="dataNascimento"
               name="dataNascimento"
-              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none"
               value={usuario.dataNascimento}
               onChange={atualizarEstado}
             />
           </div>
           <div className="flex flex-col mb-2">
-            <label htmlFor="foto" className="mb-1 text-sm font-medium text-gray-600">Foto</label>
+            <label htmlFor="foto" className="mb-1 text-sm font-medium text-white">Foto</label>
             <input
               type="text"
               id="foto"
@@ -116,7 +116,7 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col mb-2">
-            <label htmlFor="senha" className="mb-1 text-sm font-medium text-gray-600">Senha</label>
+            <label htmlFor="senha" className="mb-1 text-sm font-medium text-white">Senha</label>
             <input
               type="password"
               id="senha"
@@ -128,7 +128,7 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col mb-6">
-            <label htmlFor="confirmarSenha" className="mb-1 text-sm font-medium text-gray-600">Confirmar Senha</label>
+            <label htmlFor="confirmarSenha" className="mb-1 text-sm font-medium text-white">Confirmar Senha</label>
             <input
               type="password"
               id="confirmarSenha"
@@ -140,10 +140,10 @@ function Cadastro() {
             />
           </div>
           <div className="flex justify-between items-center mt-4">
-            <button onClick={back} className="py-2 px-4 bg-gray-500 hover:bg-gray-400 text-white text-sm font-medium rounded-md">
+            <button onClick={back} className="py-2 px-4 bg-red-600 hover:bg-red-500 text-white text-sm font-medium rounded-md">
               Cancelar
             </button>
-            <button type='submit' className="py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium rounded-md">
+            <button type='submit' className="py-2 px-4 bg-green-500 hover:bg-green-400 text-white text-sm font-medium rounded-md">
               {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> : 'Cadastrar'}
             </button>
           </div>

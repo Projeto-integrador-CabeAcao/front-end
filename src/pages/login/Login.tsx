@@ -73,7 +73,6 @@ function Login() {
               Cadastre-se
             </Link>
           </p>
-
         </div>
       </div>
     </div>
