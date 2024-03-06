@@ -1,6 +1,7 @@
 .fundoLogin {
-    background-image: url(../../assets/alunos.svg);
+    background-image: url(../../assets/background.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     min-height: 100vh;
     width: 100%;    
     background-position: center;
@@ -13,3 +14,10 @@
     width: 100%;    
     background-position: center;
   }
+
+  .metadePagina {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto transparente */
+  }
+  
