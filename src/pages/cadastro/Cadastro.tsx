@@ -4,6 +4,7 @@ import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import { RotatingLines } from 'react-loader-spinner'
 import './Cadastro.css'
+import { toastAlerta } from '../../utils/toastAlerta'
 
 function Cadastro() {
   let navigate = useNavigate()
@@ -52,12 +53,12 @@ function Cadastro() {
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-        alert('Usuário cadastrado com sucesso')
+        toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
       } catch (error) {
-        alert('Erro ao cadastrar o Usuário')
+        toastAlerta('Erro ao cadastrar o Usuário', 'erro')
       }
     } else {
-      alert('Dados inconsistentes. Verifique as informações de cadastro.')
+      toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'info')
       setUsuario({ ...usuario, senha: "" }) // Reinicia o campo de Senha
       setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
     }
@@ -75,7 +76,7 @@ function Cadastro() {
               id="nome"
               name="nome"
               placeholder="Nome"
-              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-gray-500"
               value={usuario.nome}
               onChange={atualizarEstado}
             />
@@ -87,7 +88,7 @@ function Cadastro() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-gray-500"
               value={usuario.usuario}
               onChange={atualizarEstado}
             />
@@ -110,7 +111,7 @@ function Cadastro() {
               id="foto"
               name="foto"
               placeholder="Foto"
-              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-gray-500"
               value={usuario.foto}
               onChange={atualizarEstado}
             />
@@ -122,7 +123,7 @@ function Cadastro() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-gray-500"
               value={usuario.senha}
               onChange={atualizarEstado}
             />
@@ -134,7 +135,7 @@ function Cadastro() {
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Confirmar Senha"
-              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+              className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-gray-500"
               value={confirmaSenha}
               onChange={handleConfirmarSenha}
             />

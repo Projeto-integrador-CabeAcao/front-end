@@ -7,6 +7,7 @@ interface CardTemaProps {
 }
 
 function CardTemas({tema}: CardTemaProps) {
+  
   return (
     <div className="flex flex-col bg-white shadow-lg rounded-lg max-w-md mx-2 my-2 overflow-auto">
       <div className="flex flex-row justify-between p-4 bg-[#ffffff] border-b border-gray-200 rounded-tl-lg rounded-tr-lg">

@@ -16,12 +16,15 @@ import FormularioPostagem from './components/postagens/formularioPostagem/Formul
 import Perfil from './pages/perfil/Perfil';
 import Sobre from './pages/sobre/Sobre';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
   return (
     <>
     <AuthProvider>
+    <ToastContainer />
         <BrowserRouter>
           <Navbar />
           <div className='min-h-[80vh] bg-[#F3E0D3]'>
