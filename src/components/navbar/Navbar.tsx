@@ -1,9 +1,9 @@
-import React from 'react';
-import '../navbar/Navbar.css'
-import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../context/AuthContext'
-import { useContext } from 'react';
-
+card-postagem
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
+import { FaInfo, FaRegNewspaper, FaTags, FaPlusSquare, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { toastAlerta } from '../../utils/toastAlerta';
 
 
 function Navbar() {
@@ -13,10 +13,11 @@ function Navbar() {
   const { usuario, handleLogout } = useContext(AuthContext)
 
   function logout() {
-    handleLogout()
-    alert('Usuário deslogado com sucesso')
-    navigate('/login')
-  }
+ card-postagem
+    handleLogout();
+    toastAlerta('Usuário deslogado com sucesso','sucesso');
+    navigate('/login');
+
    // Verifica se está na página de login
   const isLoginPage = window.location.pathname === '/login';
 

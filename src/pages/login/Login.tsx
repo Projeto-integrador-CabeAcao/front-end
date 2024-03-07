@@ -41,7 +41,7 @@ function Login() {
                 id="usuario"
                 name="usuario"
                 placeholder="Usuario"
-                className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+                className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-gray-500"
                 value={usuarioLogin.usuario}
                 onChange={atualizarEstado}
               />
@@ -53,7 +53,7 @@ function Login() {
                 id="senha"
                 name="senha"
                 placeholder="Senha"
-                className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-indigo-500"
+                className="px-3 py-2 border rounded-md text-sm w-full focus:outline-none focus:border-gray-500"
                 value={usuarioLogin.senha}
                 onChange={atualizarEstado}
               />
