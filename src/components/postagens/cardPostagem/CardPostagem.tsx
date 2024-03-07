@@ -19,8 +19,8 @@ function CardPostagem({ post }: CardPostagemProps) {
     console.log(post.data)
 
   return (
-    <div className="flex flex-col bg-white shadow-lg rounded-lg max-w-md mx-auto overflow-auto">
-      <div className="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
+    <div className="flex flex-col bg-white shadow-lg max-w-md mx-auto ">
+      <div className="flex flex-row justify-between p-6 bg-[white]  border-[#EA9050] rounded-full">
         <div className="flex items-center gap-4">
           <img src={post.usuario?.foto} className='h-12 w-12 rounded-full object-cover' alt="" />
           <h3 className='text-lg font-bold text-gray-900 break-words'>{post.usuario?.nome}</h3>          
@@ -47,11 +47,11 @@ function CardPostagem({ post }: CardPostagemProps) {
         <img src={post.midia} alt="" className=''/>
         <p>Data: {dataLocal}</p>
       </div>
-      <div className="mt-auto flex justify-between border-t border-gray-200 rounded-bl-lg rounded-br-lg ">
-        <Link to={`/editarPostagem/${post.id}`} className='w-full text-white bg-[#3ab7ff] hover:bg-[#1e88e5] flex items-center justify-center py-2 rounded'>
+      <div className="mt-auto flex justify-between border-t border-[#F3E0D3] rounded-bl-lg rounded-br-lg ">
+        <Link to={`/editarPostagem/${post.id}`} className='w-full text-white bg-[#609595] hover:bg-[#1e88e5] flex items-center justify-center py-1 rounded'>
           <button>Editar</button>
         </Link>
-        <Link to={`/deletarPostagem/${post.id}`} className='text-white bg-[#e55835] hover:bg-[#e54435] w-full flex items-center justify-center py-2 rounded'>
+        <Link to={`/deletarPostagem/${post.id}`} className='text-white bg-[#EA9050] hover:bg-[#EA9050] w-full flex items-center justify-center py-1 rounded'>
           <button>Deletar</button>
         </Link>
       </div>
