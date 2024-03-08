@@ -197,7 +197,7 @@ function FormularioPostagem() {
   const carregandoTema = tema.descricao === '';
 
   return (    
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="container flex flex-col mx-auto items-center ">
       <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Postagem' : 'Cadastrar Postagem'}</h1>
 
       <form onSubmit={gerarNovaPostagem} className="flex flex-col w-1/2 gap-4" style={{overflow: 'auto', maxHeight: '70vh'}}>

@@ -1,8 +1,6 @@
 import homeLogo from '../../assets/alunos.svg'
 import ListaPostagens from '../../components/postagens/listaPostagem/ListaPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
-import './Home.css';
-
 
 function Home() {
     return (
