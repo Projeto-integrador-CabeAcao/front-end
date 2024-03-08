@@ -55,19 +55,24 @@ html, body {
 }
 
 #nav-bar {
-  position: absolute;
-  left: 1vw;
-  top: 1vw;
-  height: calc(100% - 2vw);
+  position: fixed;
+  top: 0;
+  left: 0; /* Ajusta a Navbar para o lado esquerdo */
+  height: 91%; /* Ocupa toda a altura da tela */
   background: var(--navbar-dark-primary);
   border-radius: 16px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Define o layout como vertical */
   color: var(--navbar-light-primary);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow: hidden;
   user-select: none;
+  width: 193px;
+ 
 }
+
+
+
 #nav-bar hr {
   margin: 0;
   position: relative;
@@ -86,13 +91,9 @@ html, body {
 
 #nav-header {
   position: relative;
-  width: var(--navbar-width);
-  left: 16px;
-  width: calc(var(--navbar-width) - 16px);
   min-height: 80px;
   background: var(--navbar-dark-primary);
   border-radius: 16px;
-  z-index: 2;
   display: flex;
   align-items: center;
   transition: width 0.2s;
@@ -143,11 +144,9 @@ label[for=nav-toggle] {
 }
 
 #nav-content {
-  margin: -16px 0;
+  margin: 16px 0; /* Adiciona margem acima e abaixo do conteúdo */
   padding: 16px 0;
-  position: relative;
-  flex: 1;
-  width: var(--navbar-width);
+  flex: 1; /* Permite que o conteúdo ocupe o espaço restante */
   background: var(--navbar-dark-primary);
   box-shadow: 0 0 0 16px var(--navbar-dark-primary);
   direction: rtl;
@@ -195,7 +194,7 @@ label[for=nav-toggle] {
   height: 54px;
   display: flex;
   align-items: center;
-  color: var(--navbar-light-secondary);
+  color: var(--navbar-dark-primary);
   direction: ltr;
   cursor: pointer;
   z-index: 1;
@@ -344,4 +343,9 @@ label[for=nav-footer-toggle] {
 #nav-footer-content::-webkit-scrollbar-thumb {
   border-radius: 99px;
   background-color: #D62929;
+}
+
+#nav-footer {
+  /* Outros estilos */
+  height: 40px; /* Defina a altura desejada para a parte inferior da Navbar */
 }

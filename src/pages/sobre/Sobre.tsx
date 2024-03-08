@@ -2,7 +2,7 @@ import sobreFundo from '../../assets/img/png/fundo-sobre-2.png'
 
 function Sobre() {
   return (
-    <div className='min-h-scree bg-gray-100 flex flex-col items-center justify-center space-y-8 p-8'>
+    <div className='min-h-scree bg-gray-100 flex flex-col items-center justify-center space-y-8 p-8 fundoLogin'>
 
       <h2></h2>
       <h1 className='text-5xl font-bold text-[#A0D94A] mt-[-50px]'>Sobre nós</h1>
