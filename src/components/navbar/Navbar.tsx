@@ -1,4 +1,3 @@
-card-postagem
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
@@ -13,7 +12,7 @@ function Navbar() {
   const { usuario, handleLogout } = useContext(AuthContext)
 
   function logout() {
- card-postagem
+ 
     handleLogout();
     toastAlerta('Usuário deslogado com sucesso','sucesso');
     navigate('/login');
