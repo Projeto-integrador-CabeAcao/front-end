@@ -53,8 +53,6 @@ function Navbar() {
 
     <Link to='' onClick={logout} className="nav-button"><i className="hover:underline"></i><span>Sair</span></Link>
 <div id="nav-content-highlight"></div>
-        {/* Resto do seu código permanece o mesmo /}
-        {/ ... /}
       </div>
       <input id="nav-footer-toggle" type="checkbox" />
       <div id="nav-footer">
